@@ -8,7 +8,7 @@ jobs:
     runs-on: windows10
     steps:
     - name: Checkout Source Code
-      uses: actions/checkout
+      uses: actions/nodejs-test
     - name: setup Node.js
       uses: actions/setup-node@v1
       with:
