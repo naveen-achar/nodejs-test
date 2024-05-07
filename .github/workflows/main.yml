@@ -1,0 +1,22 @@
+name: Build
+on: push
+
+jobs:
+
+  sonarqube:
+    name: SonarQube Scan
+    runs-on: windows10
+    steps:
+    - name: Checkout Source Code
+      uses: actions/checkout
+    - name: setup Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 20.12.2
+    - name: install-dependancies
+      run: npm install
+    - name: SonarCube Scan
+      uses: sonarsource/sonarqube-scan-acton@master
+      env:
+        SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
+        SONAR_HOST_URL: ${{secrets.SONAR_HOST_URL}}
