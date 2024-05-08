@@ -16,7 +16,7 @@ jobs:
     - name: install-dependancies
       run: npm install
     - name: SonarCube Scan
-      uses: sonarsource/sample-node@main
+      uses: sonarsource/node-test@main
       env:
         SONAR_TOKEN: ${{secrets.SONAR_TOKEN}}
         SONAR_HOST_URL: ${{secrets.SONAR_HOST_URL}}
